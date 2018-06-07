@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Accessibility: Kestenbaum</title>
+		<link type="text/css" rel="stylesheet" href="Styles/matthew.css" media="screen">		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	</head>
+	<body>
+		<nav>
+			<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="accessibility.html">Accessibility</a></li>
+			<li><a href="graphics.html">Graphics</a></li>
+			<li><a href="javascript.html">Javacript</a></li>
+			<li><a href="video.html">Video</a></li>
+			</ul>
+		</nav>
+		<br>
+		<h1>Accessibility</h1>
+		<p id='circle'><i></i></p>
+		<br>
+		<br>
+		
+		<div class="main">
+			<table id="accessibility">
+				<caption>Web Accessibility Checklist</caption>
+				<thead>
+					<th scope="col">User characteristic</th>
+					<th scope="col">Accessible design tip</th>
+				</thead>
+				<tbody>
+				<tr><td>Unable to see</td>
+					<td>Code all images with ALT text</td></tr>
+				<tr><td>Unable to perceive colors</td>
+					<td>Avoid using color alone to convery information</td></tr>
+				<tr><td>Unable to use mouse</td>
+					<td>Be sure all website features can be accessed using keyboard</td></tr>
+				<tr><td>Unable to hear</td>
+					<td>Add captions to multimedia</td></tr>
+				<tr><td>Prone to having seizures</td>
+					<td>Avoid content that flashes</td></tr>
+				<tr><td>Heavily distractible</td>
+					<td>Keep the design simple</td></tr>
+				</tbody>
+			</table>
+		</main>
+		<script>
+			$("i").click(function() {
+				$('html, body').animate({
+					scrollTop: $("div.main").offset().top
+				}, 1000);
+			});
+			$("i").hover(function(){
+				$(this).filter(':not(:animated)').animate({
+					'padding': '20px'
+				}, 300)
+			}, function(){
+				$(this).animate({
+					'padding': '5px'
+				}, 400)
+			});
+			$("nav ul li").hover(function(){
+				$(this).filter(':not(:animated)').animate({
+					'background-color': '#e0e0e0'
+				}, 500)
+			}, function(){
+				$(this).animate({
+					'background-color': '#ffffff'
+				}, 400)
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Graphics: Kestenbaum</title>
+		<link type="text/css" rel="stylesheet" href="Styles/matthew.css" media="screen">		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	</head>
+	<body onload="setInterval('updateTime()',1000)">
+		<nav>
+			<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="accessibility.html">Accessibility</a></li>
+			<li><a href="graphics.html">Graphics</a></li>
+			<li><a href="javascript.html">Javacript</a></li>
+			<li><a href="video.html">Video</a></li>
+			</ul>
+		</nav>
+		<br>
+		<h1>Javascript</h1>
+		<p id='circle'><i></i></p>
+		<br>
+		<div class="info-main">
+		</div>
+		<div id="clock"></div>
+		<button class="javascript" onclick="showAlert()">Show alert</button>
+		<button class="javascript" onclick="toggleClock()">Show clock</button>
+		<br>
+		<script>
+			function updateTime() { 
+				// get all parts of the current time
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds();
+
+				// splice them together into a character string named "currentTime"
+				var currentTime = hours + ':' + minutes + ':' + seconds;    
+				
+				// get the clock div 
+				var myClock = document.getElementById('clock');
+				
+				// write the currentTime string to the clock div
+				myClock.innerHTML = currentTime;
+
+				// add leading zero's to minutes and seconds
+				if (minutes < 10) { 
+					minutes = '0' + minutes;
+				}
+				if (seconds < 10) { 
+					seconds = '0' + seconds;
+				}				
+				// get time of day (am or pm) 
+				if (hours >= 12 && hours < 24) { 
+					var timeOfDay = 'pm';
+				}
+				else { 
+					var timeOfDay = 'am'; 
+				}
+				
+				// convert hours from 24-hour time to 12-hour time
+				if (hours > 12) { 
+					hours = hours - 12;
+				}
+				
+				var currentTime = hours + ':' + minutes + ':' + seconds + '  ' + timeOfDay;
+			}
+			
+			function showAlert(){
+				var txt = "hello world!";
+				alert(txt);
+			}
+			
+			function toggleClock() {
+				var myClock = document.getElementById('clock');
+				var displaySetting = myClock.style.display;
+				var clockButton = document.getElementById('clockButton');
+				
+				if(displaySetting == 'block'){
+					myClock.style.display = 'none';
+					clockButton.innerHTML = 'Hide clock';
+				}
+				else {
+					myClock.style.display = 'block';
+					clockButton.innerHTML = 'Show clock';
+				}
+			}
+			
+			
+			$("i").click(function() {
+				$('html, body').animate({
+					scrollTop: $("div.main").offset().top
+				}, 1000);
+			});
+			$("i").hover(function(){
+				$(this).filter(':not(:animated)').animate({
+					'padding': '20px'
+				}, 300)
+			}, function(){
+				$(this).animate({
+					'padding': '5px'
+				}, 400)
+			});
+			$("nav ul li").hover(function(){
+				$(this).filter(':not(:animated)').animate({
+					'background-color': '#e0e0e0'
+				}, 500)
+			}, function(){
+				$(this).animate({
+					'background-color': '#ffffff'
+				}, 400)
+			});
+		</script>
+	</body>
+</html>

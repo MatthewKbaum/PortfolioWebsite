@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Web Portfolio: Matthew Kestenbaum</title>
+		<link type="text/css" rel="stylesheet" href="Styles/matthew.css" media="screen">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="shortcut icon" href="Images/favicon.png">
+	</head>
+	<body>
+		<nav>
+			<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="accessibility.html">Accessibility</a></li>
+			<li><a href="graphics.html">Graphics</a></li>
+			<li><a href="javascript.html">Javacript</a></li>
+			<li><a href="video.html">Video</a></li>
+			</ul>
+		</nav>
+		<br>
+		<!-- <img src="Images/banner.png"></img> !-->
+		<h1>My Web Portfolio</h1>
+		<p id='circle'><i></i></p>
+		<br>
+		<br>
+		<div class="info-main">
+			<div class="info">
+				<h2>All About Me</h2>
+				<ul>
+					<li>Matthew Kestenbaum</li>
+					<li>2020</li>
+					<li><a href="https://ingrahamhs.seattleschools.org/">Ingraham High School</a></li>
+					<li><a href="mailto:KestenbaumMatthew@gmail">KestenbaumMatthew@gmail.com</a></li>
+					<li>Favorite web site: <a href="https://www.reddit.com/">Reddit</a></li>
+					<li>Favorite activities: Baseball, videogames</li>
+				</ul>
+			</div>
+
+			<div class="info">
+				<h2>About this Course</h2>
+				<p>Web Design is an introductory one semester course that surveys the concepts and skills necessary to develop a web site for a small business or organization.   Subjects covered:</p>
+				<ul>
+					<li>Designing and Planning Web Pages</li>
+					<li>Creating Web Pages with HTML</li>
+					<li>Formatting with Style Sheets (CSS)</li>
+					<li>Graphics</li>
+					<li>Scripting</li>
+					<li>Client Website Project</li>
+				</ul>
+				<p>The instructor of this course Is Mr. Tanimoto. He is incredibly mean. The best instructor that I have ever had.</p>
+			</div>
+		</div>
+		<main id="main">
+			<div>
+				<h2>About My Site</h2>
+				<p id="overview">This is a sample site that contains my website portfolio for Web Design 1.  We will continually improve this site throughout this class.  Eventually, I want this site to be about my life-long dream to [fill in your dream here].</p>
+
+				<h2>Unit 2</h2>
+				<p>In Unit 2, we learned the basics of implementing HTML. We learned how to add various types of text and content on our website. The first thing that we needed to add to our website were the common and essential tags to be able to add content that we wanted. After setting up the tags that we needed to have correct formatting. We implemented the content that we wanted to display through text at first. We moved on to integrating videos into our website for our video page. We also have links to external and internal sites that can be accessed throughout the pages.</p>
+
+				<h2>Unit 3</h2>
+				<p>In Unit 3 we began using our HTML in conjunction with CSS to create aesthetic and stylish websites. We learned how to add various types of text and content on our website. The first thing that we needed to add to our website were the common and essential tags to be able to add content that we wanted. After setting up the tags that we needed to have correct formatting. We implemented the content that we wanted to display through text at first. We moved on to integrating videos into our website for our video page. We also have links to external and internal sites that can be accessed throughout the pages. </p>
+
+				<h2>Unit 4</h2>
+				<p>In Unit 4, we began to learn about adding graphics to our websites. First, we learned about how to use Paint.NET and other image processers to create images. Then we learned how to implement these images into our websites, and use them as links to other sections of the website using the 'a' tag. Finally, we created a banner for our websites by learning how to select portions of images and move them around to our pleasing. We added that image to the top of our website (mine is commented out) as a banner.</p>
+				<a href="graphics.html">
+					<img src="Images/roundedbuttonmail.png" width="75" height="75" alt="Mail button"></img>
+					<img src="Images/roundedbutton.png" width="75" height="75" alt="Regular button"></img>
+					<img src="Images/roundedbuttoncamera.png" width="75" height="75" alt="Camera button"></img>
+				</a>
+				
+				<h2>Unit 5</h2>
+				<p>In unit 5 we learned about the basics of using Javascript. We learned about the differences between server side scripting (PHP, Python) and client side scripting (Javascript). Within Javascript, we learned how to create functions and variables and use the DOM (Document Object Model). We used this knowledge to create clocks that read out the time. We then, finally, learned how to add this script to our program and apply it to the DOM to create a clock and 2 buttons (one for the alert and one to show/hide the clock).</p>
+			</div>
+		</main>
+		<script>
+			$("i").click(function() {
+				$('html, body').animate({
+					scrollTop: $("div.info-main").offset().top
+				}, 1000);
+			});
+			$("i").hover(function(){
+				$(this).filter(':not(:animated)').animate({
+					'padding': '20px'
+				}, 300)
+			}, function(){
+				$(this).animate({
+					'padding': '5px'
+				}, 400)
+			});
+			$("nav ul li").hover(function(){
+				$(this).filter(':not(:animated)').animate({
+					'background-color': '#e0e0e0'
+				}, 500)
+			}, function(){
+				$(this).animate({
+					'background-color': '#ffffff'
+				}, 400)
+			});
+		</script>
+	</body>
+</html>
